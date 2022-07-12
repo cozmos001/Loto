@@ -1,8 +1,9 @@
 import random
 
+
 class Card:
     def __init__(self, nums):
-        self.nums = nums # random.sample(range(1, 91), 15)
+        self.nums = nums  # random.sample(range(1, 91), 15)
         # self.name = name
         self.data = []
         for i in range(0, 3):
@@ -33,6 +34,9 @@ class Card:
     def __contains__(self, item):
         return item in self.data
 
+    def __eq__(self, other):
+        return self.data == other.data
+
     def del_num(self, num):
         # if num not in self.data:
         #     return f'Числа нет в карточке'
@@ -41,8 +45,3 @@ class Card:
 
     def check_end(self):
         return set(self.data) == {0, ' -'}
-
-# if __name__ == '__main__':
-#     nums = random.sample(range(1, 91), 20)
-#     a = Card([1,2,3])
-#     print(a.data)

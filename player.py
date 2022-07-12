@@ -4,6 +4,12 @@ class PlayerCPU():
         self.card = card
         self.win = None
 
+    def __str__(self):
+        return self.name
+
+    def __eq__(self, other):
+        return self.name == other.name
+
     def step(self, num, answer=None):
         self.card.del_num(num)
         if self.card.check_end():

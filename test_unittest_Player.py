@@ -14,6 +14,15 @@ class TestPlayerCPU(unittest.TestCase):
         self.assertEqual(self.playerCPU.card, self.card)
         self.assertIs(self.playerCPU.win, None)
 
+    def test_str(self):
+        self.assertEqual(str(self.playerCPU), 'CPU')
+
+    def test_eg(self):
+        self.assertEqual(self.playerCPU, self.playerCPU)
+        self.card = Card([1, 2, 3])
+        self.playerCPU_2 = PlayerCPU('CPU_2', self.card)
+        self.assertNotEqual(self.playerCPU, self.playerCPU_2)
+
     def test_step(self):
         self.playerCPU.step(1)
         self.assertIsNone(self.playerCPU.win)

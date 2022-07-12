@@ -59,8 +59,6 @@ while check_contin_win(players):
         else:
             player.step(num)
 
-print([player.win for player in players])
-
 # Вывод победителя/проигравщего если используется универсальная функция
 for player in players:
     if player.win is True:

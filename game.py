@@ -51,7 +51,7 @@ while check_contin_win(players):
     num = bag.choise()
     print(f'Новый боченок: {num} (осталось {len(bag)})')
     for player in players:
-        print(player.name)
+        print(player)
         print(player.card)
         if 'CPU' not in player.name:
             answer = input('Зачеркнуть? y/n: ')
@@ -59,14 +59,12 @@ while check_contin_win(players):
         else:
             player.step(num)
 
-print([player.win for player in players])
-
 # Вывод победителя/проигравщего если используется универсальная функция
 for player in players:
     if player.win is True:
-        print(f'{player.name} Win')
+        print(f'{player} Win')
     else:
-        print(f'{player.name} Loos')
+        print(f'{player} Loos')
 
 # Вывод победителя/проигравщего если используется просто функция для проверки на продолжение игры
 # if True in [player.win for player in players]:
